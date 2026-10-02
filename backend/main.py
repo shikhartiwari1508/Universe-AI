@@ -38,7 +38,7 @@ GEMINI_URL = (
     "interactions"
 )
 
-MODEL_NAME = "gemini-3.8-flash"
+MODEL_NAME = "gemini-3.5-flash-lite"
 
 MAX_HISTORY = 20
 
