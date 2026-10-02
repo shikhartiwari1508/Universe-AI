@@ -55,6 +55,15 @@ app = FastAPI(
     version="4.0.0"
 )
 
+@app.get("/robots.txt", include_in_schema=False)
+async def robots_txt():
+    return FileResponse("robots.txt", media_type="text/plain")
+
+
+@app.get("/sitemap.xml", include_in_schema=False)
+async def sitemap_xml():
+    return FileResponse("sitemap.xml", media_type="application/xml")
+
 
 # =========================================================
 # CORS
