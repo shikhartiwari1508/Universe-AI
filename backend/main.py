@@ -35,10 +35,10 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 GEMINI_URL = (
     "https://generativelanguage.googleapis.com/v1beta/"
-    "models/gemini-2.5-flash:generateContent"
+    "interactions"
 )
 
-MODEL_NAME = "gemini-2.5-flash"
+MODEL_NAME = "gemini-3.8-flash"
 
 MAX_HISTORY = 20
 
@@ -52,7 +52,7 @@ MAX_DOCUMENT_CHARS = 24000
 app = FastAPI(
     title="Universe AI",
     description="Futuristic AI Chatbot powered by Gemini",
-    version="2.0.0"
+    version="3.0.0"
 )
 
 
@@ -166,9 +166,8 @@ async def health():
 
     return {
         "backend": True,
-        "ollama": False,
         "gemini": gemini_configured,
-        "ai_provider": "Gemini",
+        "ai_provider": "Google Gemini",
         "model": MODEL_NAME
     }
 
@@ -410,16 +409,16 @@ Rules:
 
 
 # =========================================================
-# BUILD GEMINI CONTENT
+# BUILD CONVERSATION INPUT
 # =========================================================
 
-def build_gemini_contents(
+def build_conversation_input(
     history,
     message,
     document=""
 ):
 
-    contents = []
+    parts = []
 
     for item in history:
 
@@ -427,24 +426,17 @@ def build_gemini_contents(
 
         content = item["content"]
 
-        if role == "assistant":
+        if role == "user":
 
-            gemini_role = "model"
+            parts.append(
+                f"User: {content}"
+            )
 
-        else:
+        elif role == "assistant":
 
-            gemini_role = "user"
-
-        contents.append(
-            {
-                "role": gemini_role,
-                "parts": [
-                    {
-                        "text": content
-                    }
-                ]
-            }
-        )
+            parts.append(
+                f"Universe: {content}"
+            )
 
     current_message = message
 
@@ -457,22 +449,15 @@ def build_gemini_contents(
             + message
         )
 
-    contents.append(
-        {
-            "role": "user",
-            "parts": [
-                {
-                    "text": current_message
-                }
-            ]
-        }
+    parts.append(
+        f"User: {current_message}"
     )
 
-    return contents
+    return "\n\n".join(parts)
 
 
 # =========================================================
-# GEMINI API REQUEST
+# GEMINI INTERACTIONS API
 # =========================================================
 
 def generate_gemini_response(
@@ -487,7 +472,7 @@ def generate_gemini_response(
             "GEMINI_API_KEY is not configured on the server."
         )
 
-    contents = build_gemini_contents(
+    conversation_input = build_conversation_input(
         history,
         message,
         document
@@ -495,33 +480,19 @@ def generate_gemini_response(
 
     payload = {
 
-        "systemInstruction": {
+        "model": MODEL_NAME,
 
-            "parts": [
+        "input": conversation_input,
 
-                {
-                    "text": SYSTEM_INSTRUCTION
-                }
-
-            ]
-
-        },
-
-        "contents": contents,
-
-        "generationConfig": {
-
-            "temperature": 0.7,
-
-            "maxOutputTokens": 2048
-
-        }
+        "system_instruction": SYSTEM_INSTRUCTION
 
     }
 
     headers = {
 
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+
+        "x-goog-api-key": GEMINI_API_KEY
 
     }
 
@@ -529,20 +500,12 @@ def generate_gemini_response(
 
         GEMINI_URL,
 
-        params={
-            "key": GEMINI_API_KEY
-        },
-
         headers=headers,
 
         json=payload,
 
         timeout=120
     )
-
-    # -----------------------------------------------------
-    # API ERROR
-    # -----------------------------------------------------
 
     if not response.ok:
 
@@ -556,6 +519,10 @@ def generate_gemini_response(
                 .get("message")
             )
 
+            if not error_message:
+
+                error_message = response.text
+
         except Exception:
 
             error_message = response.text
@@ -564,61 +531,70 @@ def generate_gemini_response(
             f"Gemini API error: {error_message}"
         )
 
-    # -----------------------------------------------------
-    # RESPONSE JSON
-    # -----------------------------------------------------
-
     data = response.json()
 
-    try:
+    # -----------------------------------------------------
+    # Recommended Interactions API output
+    # -----------------------------------------------------
 
-        candidates = data.get(
-            "candidates",
+    output_text = data.get(
+        "output_text"
+    )
+
+    if output_text:
+
+        return output_text.strip()
+
+    # -----------------------------------------------------
+    # Fallback parser
+    # -----------------------------------------------------
+
+    output = data.get(
+        "output",
+        []
+    )
+
+    text_parts = []
+
+    for item in output:
+
+        if not isinstance(item, dict):
+
+            continue
+
+        content = item.get(
+            "content",
             []
         )
 
-        if not candidates:
+        if isinstance(content, list):
 
-            raise RuntimeError(
-                "Gemini returned no response."
-            )
+            for part in content:
 
-        parts = (
-            candidates[0]
-            .get("content", {})
-            .get("parts", [])
-        )
+                if isinstance(part, dict):
 
-        text_parts = []
+                    text = part.get(
+                        "text",
+                        ""
+                    )
 
-        for part in parts:
+                    if text:
 
-            text = part.get(
-                "text",
-                ""
-            )
+                        text_parts.append(
+                            text
+                        )
 
-            if text:
+    result = "".join(
+        text_parts
+    ).strip()
 
-                text_parts.append(text)
-
-        result = "".join(
-            text_parts
-        ).strip()
-
-        if not result:
-
-            raise RuntimeError(
-                "Gemini returned an empty response."
-            )
+    if result:
 
         return result
 
-    except Exception as error:
-
-        raise RuntimeError(
-            f"Unable to read Gemini response: {error}"
-        )
+    raise RuntimeError(
+        "Gemini returned an empty response."
+    )
 
 
 # =========================================================
@@ -704,9 +680,17 @@ async def chat(request: ChatRequest):
             if "429" in error_text:
 
                 yield (
-                    "\n\n⚠️ Gemini free-tier limit "
+                    "\n\n⚠️ Gemini API rate limit "
                     "has been reached. Please try "
                     "again later."
+                )
+
+            elif "401" in error_text or "403" in error_text:
+
+                yield (
+                    "\n\n❌ Gemini API key is "
+                    "invalid or does not have "
+                    "permission."
                 )
 
             else:
@@ -823,11 +807,8 @@ async def upload_file(
     ).suffix.lower()
 
     allowed = {
-
         ".txt",
-
         ".pdf"
-
     }
 
     if extension not in allowed:
@@ -846,20 +827,12 @@ async def upload_file(
             "File size must be below 8 MB."
         )
 
-    # -----------------------------------------------------
-    # TXT
-    # -----------------------------------------------------
-
     if extension == ".txt":
 
         text = data.decode(
             "utf-8",
             errors="ignore"
         )
-
-    # -----------------------------------------------------
-    # PDF
-    # -----------------------------------------------------
 
     else:
 
@@ -919,13 +892,8 @@ async def upload_file(
         )
 
     return {
-
         "filename": file.filename,
-
-        "text": text[
-            :MAX_DOCUMENT_CHARS
-        ]
-
+        "text": text[:MAX_DOCUMENT_CHARS]
     }
 
 
@@ -938,13 +906,8 @@ if __name__ == "__main__":
     import uvicorn
 
     uvicorn.run(
-
         "main:app",
-
         host="127.0.0.1",
-
         port=8000,
-
         reload=True
-
     )
