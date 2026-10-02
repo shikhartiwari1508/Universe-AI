@@ -1,74 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>UNIVERSESS AI — Intelligent Assistant</title>
-    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
-    
-    <link rel="stylesheet" href="/static/style.css">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- ================= SEO ================= -->
+
+    <title>UNIVERSE AI — Intelligent AI Assistant</title>
+
+    <meta
+        name="description"
+        content="UNIVERSE AI is an intelligent AI assistant for answering questions, learning, coding, generating ideas and exploring knowledge."
+    >
+
+    <meta
+        name="keywords"
+        content="Universe AI, AI assistant, artificial intelligence, AI chatbot, coding assistant, Python assistant, Gemini AI"
+    >
+
+    <meta
+        name="author"
+        content="Shikhar Tiwari"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <link
+        rel="canonical"
+        href="https://universe-ai-58di.onrender.com/"
+    >
+
+    <!-- ================= FAVICON ================= -->
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="/static/favicon.svg"
+    >
+
+    <!-- ================= STYLES ================= -->
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+    <!-- ================= GOOGLE FONTS ================= -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
 </head>
+
 
 <body>
 
 <div class="app">
 
+
     <!-- ================= SIDEBAR ================= -->
 
-    <aside class="sidebar" id="sidebar">
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
 
         <div class="brand">
+
             <div class="brand-logo">
                 <span>✦</span>
             </div>
 
             <div>
+
                 <h1>UNIVERSE</h1>
-                <small>AI ASSISTANT</small>
+
+                <small>
+                    AI ASSISTANT
+                </small>
+
             </div>
+
         </div>
 
-        <button class="new-chat-btn" id="newChatBtn">
+
+        <button
+            class="new-chat-btn"
+            id="newChatBtn"
+        >
+
             <span>＋</span>
-            <span>New Chat</span>
+
+            <span>
+                New Chat
+            </span>
+
         </button>
 
+
         <div class="sidebar-section">
+
             <div class="section-title">
-                <span>CONVERSATIONS</span>
-                <button id="clearChatsBtn" title="Clear chats">⌫</button>
+
+                <span>
+                    CONVERSATIONS
+                </span>
+
+                <button
+                    id="clearChatsBtn"
+                    title="Clear chats"
+                >
+                    ⌫
+                </button>
+
             </div>
 
-            <div id="chatHistory" class="chat-history"></div>
+
+            <div
+                id="chatHistory"
+                class="chat-history"
+            ></div>
+
         </div>
+
 
         <div class="sidebar-bottom">
 
             <div class="system-status">
+
                 <span class="status-dot"></span>
 
                 <div>
-                    <strong>Local AI</strong>
-                    <small>Ollama Connected</small>
+
+                    <strong>
+                        AI System
+                    </strong>
+
+                    <small>
+                        Gemini Connected
+                    </small>
+
                 </div>
+
             </div>
+
 
             <div class="sidebar-actions">
 
-                <button id="themeBtn" title="Change theme">
+                <button
+                    id="themeBtn"
+                    title="Change theme"
+                >
                     ◐
                 </button>
 
-                <button id="exportBtn" title="Export conversation">
+
+                <button
+                    id="exportBtn"
+                    title="Export conversation"
+                >
                     ⇩
                 </button>
 
-                <button id="settingsBtn" title="Settings">
+
+                <button
+                    id="settingsBtn"
+                    title="Settings"
+                >
                     ⚙
                 </button>
 
@@ -79,41 +198,68 @@
     </aside>
 
 
+
     <!-- ================= MAIN ================= -->
 
     <main class="main">
 
-        <!-- TOP BAR -->
+
+        <!-- ================= TOP BAR ================= -->
 
         <header class="topbar">
 
-            <button class="mobile-menu" id="mobileMenu">
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+            >
                 ☰
             </button>
+
 
             <div class="topbar-title">
 
                 <div class="online-icon">
+
                     <span></span>
+
                 </div>
 
+
                 <div>
-                    <h2>UNIVERSE AI</h2>
+
+                    <h2>
+                        UNIVERSE AI
+                    </h2>
+
                     <p>
-                        <span class="online-text">Online</span>
-                        • Llama 3.2
+
+                        <span class="online-text">
+                            Online
+                        </span>
+
+                        • Google Gemini
+
                     </p>
+
                 </div>
 
             </div>
 
+
             <div class="topbar-actions">
 
-                <button id="searchBtn" title="Search conversation">
+                <button
+                    id="searchBtn"
+                    title="Search conversation"
+                >
                     ⌕
                 </button>
 
-                <button id="fullscreenBtn" title="Fullscreen">
+
+                <button
+                    id="fullscreenBtn"
+                    title="Fullscreen"
+                >
                     ⛶
                 </button>
 
@@ -122,13 +268,20 @@
         </header>
 
 
-        <!-- SEARCH -->
 
-        <div class="search-panel" id="searchPanel">
+        <!-- ================= SEARCH ================= -->
+
+        <div
+            class="search-panel"
+            id="searchPanel"
+        >
 
             <div class="search-box">
 
-                <span>⌕</span>
+                <span>
+                    ⌕
+                </span>
+
 
                 <input
                     type="text"
@@ -136,20 +289,31 @@
                     placeholder="Search this conversation..."
                 >
 
-                <button id="closeSearch">×</button>
+
+                <button id="closeSearch">
+                    ×
+                </button>
 
             </div>
 
         </div>
 
 
-        <!-- CHAT -->
 
-        <section class="chat-area" id="chatArea">
+        <!-- ================= CHAT ================= -->
 
-            <!-- WELCOME -->
+        <section
+            class="chat-area"
+            id="chatArea"
+        >
 
-            <div class="welcome" id="welcome">
+
+            <!-- ================= WELCOME ================= -->
+
+            <div
+                class="welcome"
+                id="welcome"
+            >
 
                 <div class="hero-orb">
 
@@ -159,59 +323,140 @@
 
                 </div>
 
+
                 <h2>
-                    Welcome to <span>UNIVERSE AI</span>
+
+                    Welcome to
+                    <span>
+                        UNIVERSE AI
+                    </span>
+
                 </h2>
 
+
                 <p>
-                    Your intelligent local AI assistant powered by Ollama.
-                    Ask anything, explore ideas, write code and learn faster.
+
+                    Your intelligent AI assistant powered by
+                    Google Gemini.
+                    Ask anything, explore ideas,
+                    write code and learn faster.
+
                 </p>
+
 
 
                 <div class="quick-prompts">
 
-                    <button class="prompt-card" data-prompt="Explain artificial intelligence in simple words">
-                        <span>🧠</span>
-                        <strong>Explain AI</strong>
-                        <small>In simple words</small>
+
+                    <button
+                        class="prompt-card"
+                        data-prompt="Explain artificial intelligence in simple words"
+                    >
+
+                        <span>
+                            🧠
+                        </span>
+
+                        <strong>
+                            Explain AI
+                        </strong>
+
+                        <small>
+                            In simple words
+                        </small>
+
                     </button>
 
-                    <button class="prompt-card" data-prompt="Write a Python program to calculate factorial">
-                        <span>💻</span>
-                        <strong>Write Code</strong>
-                        <small>Python programming</small>
+
+
+                    <button
+                        class="prompt-card"
+                        data-prompt="Write a Python program to calculate factorial"
+                    >
+
+                        <span>
+                            💻
+                        </span>
+
+                        <strong>
+                            Write Code
+                        </strong>
+
+                        <small>
+                            Python programming
+                        </small>
+
                     </button>
 
-                    <button class="prompt-card" data-prompt="Give me 5 innovative project ideas for a computer science student">
-                        <span>🚀</span>
-                        <strong>Project Ideas</strong>
-                        <small>Build something great</small>
+
+
+                    <button
+                        class="prompt-card"
+                        data-prompt="Give me 5 innovative project ideas for a computer science student"
+                    >
+
+                        <span>
+                            🚀
+                        </span>
+
+                        <strong>
+                            Project Ideas
+                        </strong>
+
+                        <small>
+                            Build something great
+                        </small>
+
                     </button>
 
-                    <button class="prompt-card" data-prompt="Teach me something interesting about space">
-                        <span>🌌</span>
-                        <strong>Learn Something</strong>
-                        <small>Discover knowledge</small>
+
+
+                    <button
+                        class="prompt-card"
+                        data-prompt="Teach me something interesting about space"
+                    >
+
+                        <span>
+                            🌌
+                        </span>
+
+                        <strong>
+                            Learn Something
+                        </strong>
+
+                        <small>
+                            Discover knowledge
+                        </small>
+
                     </button>
+
 
                 </div>
 
             </div>
 
 
-            <!-- MESSAGES -->
 
-            <div class="messages" id="messages"></div>
+            <!-- ================= MESSAGES ================= -->
+
+            <div
+                class="messages"
+                id="messages"
+            ></div>
 
 
-            <!-- TYPING -->
 
-            <div class="typing-container hidden" id="typing">
+            <!-- ================= TYPING ================= -->
+
+            <div
+                class="typing-container hidden"
+                id="typing"
+            >
 
                 <div class="avatar small-avatar">
                     ✦
                 </div>
+
 
                 <div class="typing-bubble">
 
@@ -219,7 +464,9 @@
                     <span></span>
                     <span></span>
 
-                    <small>UNIVERSE is thinking...</small>
+                    <small>
+                        UNIVERSE is thinking...
+                    </small>
 
                 </div>
 
@@ -228,17 +475,24 @@
         </section>
 
 
-        <!-- INPUT -->
+
+        <!-- ================= INPUT ================= -->
 
         <section class="composer-wrapper">
 
+
             <div class="composer">
+
 
                 <div class="attachment-area">
 
-                    <button id="attachBtn" title="Attach file">
+                    <button
+                        id="attachBtn"
+                        title="Attach file"
+                    >
                         ＋
                     </button>
+
 
                     <input
                         type="file"
@@ -249,6 +503,8 @@
 
                 </div>
 
+
+
                 <textarea
                     id="messageInput"
                     rows="1"
@@ -257,7 +513,9 @@
                 ></textarea>
 
 
+
                 <div class="composer-actions">
+
 
                     <button
                         id="voiceBtn"
@@ -267,6 +525,7 @@
                         🎙
                     </button>
 
+
                     <button
                         id="sendBtn"
                         class="send-btn"
@@ -275,19 +534,27 @@
                         ➤
                     </button>
 
+
                 </div>
 
             </div>
 
 
+
             <div class="composer-footer">
 
                 <span>
-                    UNIVERSE may make mistakes. Verify important information.
+
+                    UNIVERSE may make mistakes.
+                    Verify important information.
+
                 </span>
 
+
                 <span id="messageCounter">
+
                     0 characters
+
                 </span>
 
             </div>
@@ -297,71 +564,133 @@
     </main>
 
 
+
     <!-- ================= SETTINGS ================= -->
 
-    <div class="modal hidden" id="settingsModal">
+    <div
+        class="modal hidden"
+        id="settingsModal"
+    >
 
         <div class="modal-card">
+
 
             <div class="modal-header">
 
                 <div>
-                    <h2>Settings</h2>
-                    <p>Customize your UNIVERSE experience</p>
+
+                    <h2>
+                        Settings
+                    </h2>
+
+                    <p>
+                        Customize your UNIVERSE experience
+                    </p>
+
                 </div>
 
-                <button id="closeSettings">×</button>
+
+                <button id="closeSettings">
+                    ×
+                </button>
 
             </div>
+
 
 
             <div class="setting-item">
 
                 <div>
-                    <strong>Theme</strong>
-                    <small>Switch between light and dark interface</small>
+
+                    <strong>
+                        Theme
+                    </strong>
+
+                    <small>
+                        Switch between light and dark interface
+                    </small>
+
                 </div>
 
-                <button id="modalThemeBtn" class="setting-control">
+
+                <button
+                    id="modalThemeBtn"
+                    class="setting-control"
+                >
                     Dark
                 </button>
 
             </div>
 
 
+
             <div class="setting-item">
 
                 <div>
-                    <strong>Sound</strong>
-                    <small>Play a notification after response</small>
+
+                    <strong>
+                        Sound
+                    </strong>
+
+                    <small>
+                        Play a notification after response
+                    </small>
+
                 </div>
 
+
                 <label class="switch">
-                    <input type="checkbox" id="soundToggle">
+
+                    <input
+                        type="checkbox"
+                        id="soundToggle"
+                    >
+
                     <span></span>
+
                 </label>
 
             </div>
 
 
+
             <div class="setting-item">
 
                 <div>
-                    <strong>Enter to Send</strong>
-                    <small>Press Enter to send a message</small>
+
+                    <strong>
+                        Enter to Send
+                    </strong>
+
+                    <small>
+                        Press Enter to send a message
+                    </small>
+
                 </div>
 
+
                 <label class="switch">
-                    <input type="checkbox" id="enterToggle" checked>
+
+                    <input
+                        type="checkbox"
+                        id="enterToggle"
+                        checked
+                    >
+
                     <span></span>
+
                 </label>
 
             </div>
+
 
 
             <div class="modal-footer">
 
-                <button id="closeSettings2" class="secondary-btn">
+                <button
+                    id="closeSettings2"
+                    class="secondary-btn"
+                >
                     Close
                 </button>
 
@@ -372,18 +701,33 @@
     </div>
 
 
-    <!-- TOAST -->
 
-    <div class="toast" id="toast">
-        <span>✓</span>
-        <p>Copied to clipboard</p>
+    <!-- ================= TOAST ================= -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+
+        <span>
+            ✓
+        </span>
+
+        <p>
+            Copied to clipboard
+        </p>
+
     </div>
 
 
 </div>
 
 
+
+<!-- ================= JAVASCRIPT ================= -->
+
 <script src="/static/script.js"></script>
+
 
 </body>
 </html>
