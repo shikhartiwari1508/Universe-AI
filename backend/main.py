@@ -69,6 +69,13 @@ async def sitemap_xml():
         BASE_DIR / "sitemap.xml",
         media_type="application/xml"
     )
+
+@app.get("/google7f0479994c6a88dd.html", include_in_schema=False)
+async def google_verification():
+    return FileResponse(
+        BASE_DIR / "google7f0479994c6a88dd.html",
+        media_type="text/html"
+    )
 # =========================================================
 # CORS
 # =========================================================
