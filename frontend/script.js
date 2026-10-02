@@ -1,11 +1,9 @@
 /* =========================================================
-
    UNIVERSE AI — FRONTEND ENGINE
 
-   FastAPI + Ollama
+   FastAPI + Google Gemini
 
-   Real-time streaming enabled
-
+   Real-time AI responses enabled
 ========================================================= */
 
 
