@@ -1536,7 +1536,7 @@ function speakText(text) {
 
 
     showToast(
-        "NOVA is speaking 🔊"
+        "UNIVERSE is speaking 🔊"
     );
 
 }
