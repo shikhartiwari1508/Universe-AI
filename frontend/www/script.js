@@ -89,8 +89,6 @@ let recognition = null;
 let isListening = false;
 
 let toastTimer = null;
-
-
 /* =========================================================
    HELPERS
 ========================================================= */
@@ -225,8 +223,6 @@ async function createChat() {
     return currentChatId;
 
 }
-
-
 /* =========================================================
    INITIALIZATION
 ========================================================= */
@@ -268,8 +264,6 @@ async function initSessions() {
     await listPromise;
 
 }
-
-
 /* =========================================================
    SESSIONS LIST (sidebar)
 ========================================================= */
@@ -469,8 +463,6 @@ async function deleteChat(chat) {
     }
 
 }
-
-
 /* =========================================================
    OPEN / NEW CHAT
 ========================================================= */
@@ -668,8 +660,6 @@ if (clearChatsBtn) {
     });
 
 }
-
-
 /* =========================================================
    MESSAGE RENDERING
 ========================================================= */
@@ -855,8 +845,6 @@ messages.addEventListener("click", event => {
     }, 1500);
 
 });
-
-
 /* =========================================================
    SEND MESSAGE
 ========================================================= */
@@ -1076,8 +1064,6 @@ messageInput.addEventListener("input", () => {
     updateCounter();
 
 });
-
-
 /* =========================================================
    UI HELPERS
 ========================================================= */
@@ -1154,8 +1140,6 @@ function showToast(message) {
     }, 2200);
 
 }
-
-
 /* =========================================================
    COPY / SPEAK
 ========================================================= */
@@ -1187,15 +1171,63 @@ async function copyText(text) {
 }
 
 
-function speakText(text) {
+async function speakText(text) {
 
-    if (!("speechSynthesis" in window)) {
+    const clean = text
+        .replace(/```[\s\S]*?```/g, "")
+        .replace(/[*#`]/g, "")
+        .trim();
 
-        showToast("Speech is not supported");
+    if (!clean) return;
 
-        return;
+    try {
+
+        const isAndroidApp =
+            typeof window.Capacitor !== "undefined" &&
+            window.Capacitor.isNativePlatform &&
+            window.Capacitor.isNativePlatform();
+
+        if (isAndroidApp) {
+
+            await window.Capacitor.Plugins.TextToSpeech.stop();
+
+            await window.Capacitor.Plugins.TextToSpeech.speak({
+                text: clean,
+                lang: "en-IN",
+                rate: 1.0,
+                pitch: 1.0,
+                volume: 1.0
+            });
+
+            showToast("UNIVERSE is speaking ??");
+            return;
+        }
+
+        if (!("speechSynthesis" in window)) {
+
+            showToast("Speech is not supported");
+            return;
+        }
+
+        window.speechSynthesis.cancel();
+
+        const speech = new SpeechSynthesisUtterance(clean);
+
+        speech.rate = 1;
+        speech.pitch = 1;
+        speech.volume = 1;
+
+        window.speechSynthesis.speak(speech);
+
+        showToast("UNIVERSE is speaking ??");
+
+    } catch (error) {
+
+        console.error("Text-to-Speech error:", error);
+        showToast("Unable to start speech");
 
     }
+}
 
     window.speechSynthesis.cancel();
 
@@ -1216,8 +1248,6 @@ function speakText(text) {
     showToast("UNIVERSE is speaking 🔊");
 
 }
-
-
 /* =========================================================
    VOICE INPUT
 ========================================================= */
@@ -1308,8 +1338,6 @@ if (voiceBtn) {
     });
 
 }
-
-
 /* =========================================================
    PROMPT CARDS
 ========================================================= */
@@ -1333,8 +1361,6 @@ function setupPromptCards() {
     });
 
 }
-
-
 /* =========================================================
    FILE ATTACHMENT (PDF / TXT → sent as document context)
 ========================================================= */
@@ -1429,8 +1455,6 @@ if (fileInput) {
     });
 
 }
-
-
 /* =========================================================
    EXPORT CONVERSATION
 ========================================================= */
@@ -1485,8 +1509,6 @@ if (exportBtn) {
     });
 
 }
-
-
 /* =========================================================
    MOBILE SIDEBAR (open / close with X, overlay, Esc)
 ========================================================= */
@@ -1538,8 +1560,6 @@ window.addEventListener("resize", () => {
     if (!isMobile()) closeSidebar();
 
 });
-
-
 /* =========================================================
    THEME
 ========================================================= */
@@ -1583,8 +1603,6 @@ function updateThemeButton() {
 if (themeBtn) themeBtn.addEventListener("click", toggleTheme);
 
 if (modalThemeBtn) modalThemeBtn.addEventListener("click", toggleTheme);
-
-
 /* =========================================================
    SETTINGS
 ========================================================= */
@@ -1660,8 +1678,6 @@ function saveSettings() {
 if (soundToggle) soundToggle.addEventListener("change", saveSettings);
 
 if (enterToggle) enterToggle.addEventListener("change", saveSettings);
-
-
 /* =========================================================
    SEARCH (inside current conversation)
 ========================================================= */
@@ -1733,8 +1749,6 @@ if (closeSearch) {
 }
 
 if (searchInput) searchInput.addEventListener("input", searchMessages);
-
-
 /* =========================================================
    FULLSCREEN
 ========================================================= */
@@ -1764,8 +1778,6 @@ if (fullscreenBtn) {
     });
 
 }
-
-
 /* =========================================================
    NOTIFICATION SOUND
 ========================================================= */
@@ -1800,8 +1812,6 @@ function playNotificationSound() {
     } catch {}
 
 }
-
-
 /* =========================================================
    KEYBOARD SHORTCUTS
 ========================================================= */
