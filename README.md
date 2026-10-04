@@ -1,208 +1,287 @@
 # 🌌 UNIVERSE AI
 
-### Intelligent AI Assistant powered by Google Gemini
+<p align="center">
+
+<img src="https://img.shields.io/badge/Universe%20AI-Intelligent%20Assistant-orange?style=for-the-badge&logo=google-gemini&logoColor=white" alt="Universe AI">
+
+<img src="https://img.shields.io/badge/AI-Gemini-blue?style=for-the-badge" alt="Gemini AI">
+
+<img src="https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI">
+
+<img src="https://img.shields.io/badge/Database-SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
+
+<img src="https://img.shields.io/badge/Platform-Web%20%7C%20Android-black?style=for-the-badge" alt="Platforms">
+
+</p>
 
 <p align="center">
-  <strong>A modern AI chatbot for learning, coding, problem solving and exploring ideas.</strong>
+  <strong>A modern AI-powered intelligent assistant built with FastAPI, Gemini AI and a responsive web interface.</strong>
 </p>
+
+<p align="center">
+  <a href="https://universe-ai-58di.onrender.com/">🌐 Live Demo</a>
+  •
+  <a href="https://github.com/shikhartiwari1508/Universe-AI">💻 GitHub</a>
+  •
+  <a href="https://github.com/shikhartiwari1508/Universe-AI/releases">📦 Releases</a>
+</p>
+
+---
+
+## 🚀 About Universe AI
+
+**Universe AI** is an AI-powered intelligent assistant designed to provide a smooth, modern and interactive conversational experience.
+
+The project combines a **FastAPI backend**, **Google Gemini AI**, **SQLite-based conversation storage**, document upload support and a responsive frontend that can be accessed from both **web browsers and Android devices**.
+
+Universe AI is designed to work like a personal AI assistant where users can:
+
+- 💬 Start and continue conversations
+- 🧠 Ask questions and receive AI-generated responses
+- 🗂️ Maintain separate conversations
+- ✨ Create new chats whenever required
+- 📄 Upload PDF and TXT documents
+- 🔎 Ask questions based on uploaded content
+- 🗑️ Delete conversations
+- 📱 Use the assistant through an Android APK
+- 🌐 Access the application through the web
+
+---
+
+# ✨ Features
+
+## 🤖 AI-Powered Conversations
+
+Universe AI uses **Google Gemini** to generate intelligent responses.
+
+Users can interact with the assistant naturally and ask questions about:
+
+- Programming
+- Education
+- General knowledge
+- Projects
+- Technical concepts
+- Documents
+- Problem solving
+- Everyday tasks
+
+---
+
+## 💬 ChatGPT-Style Conversation System
+
+Universe AI provides a conversation-based interface.
+
+Each conversation has its own session and message history.
+
+### Conversation features
+
+- ➕ New Chat
+- 💬 Continuous conversation
+- 🗂️ Multiple chat sessions
+- 💾 Automatic message storage
+- 🕒 Conversation timestamps
+- 🗑️ Delete conversations
+- 🔄 Load previous conversations
+
+Messages are stored in SQLite so that conversations can persist between requests.
+
+---
+
+## 📄 Document Upload
+
+Universe AI supports document-based interaction.
+
+Supported formats:
+
+```text
+PDF
+TXT
+```
+
+Users can upload a document and interact with its content through the AI assistant.
+
+This can be useful for:
+
+- 📚 Study material
+- 📝 Notes
+- 📖 Books
+- 📄 Assignments
+- 💻 Documentation
+- 📑 Project files
+
+The backend processes the uploaded content and provides it to the AI within the configured document context limits.
+
+---
+
+# 📱 Android Application
+
+Universe AI is also available as an Android application.
+
+The Android version packages the Universe AI web interface into a mobile application so users can access their AI assistant directly from their phone.
+
+### 📲 Download APK
+
+<p align="center">
+
+<a href="https://github.com/shikhartiwari1508/Universe-AI/releases/latest">
+<img src="https://img.shields.io/badge/Download%20Universe%20AI%20APK-FF6B00?style=for-the-badge&logo=android&logoColor=white" alt="Download APK">
+</a>
+
+</p>
+
+### Installation
+
+1. Download the latest `UNIVERSE AI.apk` from the Releases page.
+2. Open the APK on your Android phone.
+3. If Android asks for permission, allow installation from the required source.
+4. Install the application.
+5. Open **Universe AI**.
+6. Start chatting with the AI assistant.
+
+> **Note:** The APK should be uploaded to the GitHub Release as a release asset rather than being stored directly inside the source repository.
+
+---
+
+# 🌐 Live Web Application
+
+You can use Universe AI directly from your browser without installing anything.
 
 <p align="center">
 
 <a href="https://universe-ai-58di.onrender.com/">
-<img src="https://img.shields.io/badge/🌐%20Live%20Demo-UNIVERSE%20AI-orange?style=for-the-badge">
+<img src="https://img.shields.io/badge/OPEN%20UNIVERSE%20AI-LIVE%20DEMO-orange?style=for-the-badge" alt="Live Demo">
 </a>
-
-<img src="https://img.shields.io/badge/AI-Google%20Gemini-blue?style=for-the-badge">
-
-<img src="https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge">
-
-<img src="https://img.shields.io/badge/Frontend-HTML%20%7C%20CSS%20%7C%20JavaScript-yellow?style=for-the-badge">
-
-<img src="https://img.shields.io/badge/Deployment-Render-purple?style=for-the-badge">
 
 </p>
 
----
-
-## 🚀 About
-
-**UNIVERSE AI** is a web-based AI assistant built with **Python, FastAPI, HTML, CSS and JavaScript**, using **Google Gemini** as its AI provider.
-
-The application provides an interactive chat interface where users can ask questions, learn concepts, work with programming problems, generate ideas and explore different topics through natural-language conversations.
-
-The project includes both a local development setup and a publicly deployed web version.
+**Live URL:**  
+https://universe-ai-58di.onrender.com/
 
 ---
 
-## ✨ Features
+# 🧠 AI Technology
 
-### 🤖 AI Chat
-- Google Gemini powered responses
-- Natural-language conversations
-- Conversation history
-- New chat creation
-- Delete conversations
-- Streaming-style response display
+Universe AI uses **Google Gemini** as its AI model provider.
 
-### 💻 Coding & Learning
-- Programming questions
-- Python code generation
-- Code explanations
-- Concept explanations
-- Beginner-friendly learning assistance
-- Project idea generation
+The backend communicates with the Gemini API through the configured AI interaction endpoint.
 
-### 📎 File Support
-- Upload text files
-- Upload PDF files
-- Extract text from supported files
-- Use uploaded content during conversations
-
-### 🎙️ Voice
-- Voice input
-- Browser speech recognition
-- Text-to-speech support
-
-### 💬 Conversation Tools
-- Search conversations
-- Export conversations
-- Copy AI responses
-- Conversation timestamps
-- Character counter
-- Typing indicator
-
-### 🎨 User Interface
-- Futuristic AI interface
-- Responsive design
-- Dark/light theme
-- Mobile sidebar
-- Fullscreen mode
-- Interactive prompt cards
-- Notification sound option
-
-### 🔐 Configuration & Security
-- Gemini API key through environment variables
-- `.env` excluded through `.gitignore`
-- Local database excluded from Git
-- API credentials are not stored in source code
-
----
-
-## 🧠 Architecture
+### AI flow
 
 ```text
-┌──────────────────────────────┐
-│          USER                │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│       UNIVERSE AI            │
-│   HTML + CSS + JavaScript    │
-└──────────────┬───────────────┘
-               │
-               │ HTTP / API
-               ▼
-┌──────────────────────────────┐
-│          FastAPI             │
-│        backend/main.py       │
-└──────────────┬───────────────┘
-               │
-               │ Gemini API
-               ▼
-┌──────────────────────────────┐
-│       Google Gemini          │
-│      AI Model / API          │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│       AI Response            │
-└──────────────┬───────────────┘
-               │
-               ▼
-┌──────────────────────────────┐
-│          USER                │
-└──────────────────────────────┘
+User
+  │
+  ▼
+Universe AI Frontend
+  │
+  ▼
+FastAPI Backend
+  │
+  ├── Chat History
+  │
+  ├── Document Processing
+  │
+  ▼
+Google Gemini
+  │
+  ▼
+AI Response
+  │
+  ▼
+Universe AI Interface
 ```
 
 ---
 
-## 🛠️ Tech Stack
+# 🏗️ System Architecture
 
-### Frontend
-
-- HTML5
-- CSS3
-- JavaScript
-- Google Fonts
-- Browser Web APIs
-
-### Backend
-
-- Python
-- FastAPI
-- Uvicorn
-- SQLite
-- Pydantic
-- HTTP requests
-
-### AI
-
-- Google Gemini
-- Gemini Interactions API
-
-### File Processing
-
-- PyPDF
-
-### Deployment
-
-- GitHub
-- Render
+```text
+                    ┌──────────────────────┐
+                    │      User            │
+                    └──────────┬───────────┘
+                               │
+                    ┌──────────▼───────────┐
+                    │   Web / Android App  │
+                    └──────────┬───────────┘
+                               │
+                         HTTP / API
+                               │
+                    ┌──────────▼───────────┐
+                    │    FastAPI Backend   │
+                    └──────┬───────┬───────┘
+                           │       │
+                    ┌──────▼──┐ ┌──▼─────────────┐
+                    │ SQLite  │ │ Document       │
+                    │ Database│ │ Processing     │
+                    └─────────┘ └──────┬─────────┘
+                                       │
+                              ┌────────▼────────┐
+                              │   Gemini AI     │
+                              └────────┬────────┘
+                                       │
+                              ┌────────▼────────┐
+                              │ AI Response     │
+                              └─────────────────┘
+```
 
 ---
 
-## 📁 Project Structure
+# 🛠️ Technologies Used
+
+| Technology | Purpose |
+|---|---|
+| 🐍 Python | Backend programming |
+| ⚡ FastAPI | REST API backend |
+| 🤖 Google Gemini | Artificial Intelligence |
+| 🗄️ SQLite | Chat history database |
+| 🌐 HTML | Frontend structure |
+| 🎨 CSS | Frontend styling |
+| ⚙️ JavaScript | Frontend functionality |
+| 📱 Android | Mobile application |
+| 🚀 Render | Cloud deployment |
+| 🐙 GitHub | Source code & version control |
+
+---
+
+# 📂 Project Structure
 
 ```text
 Universe-AI/
 │
 ├── backend/
-│   ├── main.py
-│   └── requirements.txt
+│   └── main.py
 │
 ├── frontend/
-│   └── index.html
-│
-├── static/
-│   ├── favicon.svg
+│   ├── index.html
+│   ├── style.css
 │   ├── script.js
-│   └── style.css
+│   └── ...
 │
+├── frontend/android/
+│   ├── app/
+│   ├── gradle/
+│   ├── build.gradle
+│   ├── settings.gradle
+│   └── ...
+│
+├── requirements.txt
 ├── .gitignore
 ├── Start_Universe_AI.bat
-│
-├── robots.txt
-├── sitemap.xml
-├── google7f0479994c6a88dd.html
-│
 └── README.md
 ```
 
-> Runtime files such as the local SQLite database, Python cache files and environment files are intentionally excluded from Git.
+> The exact project structure may change as new features are added.
 
 ---
 
-# ⚙️ Local Setup
+# 💻 Run Universe AI Locally
 
-## 1. Clone the Repository
+## 1. Clone the repository
 
 ```bash
 git clone https://github.com/shikhartiwari1508/Universe-AI.git
 ```
 
-Go into the project:
+Move into the project:
 
 ```bash
 cd Universe-AI
@@ -210,7 +289,7 @@ cd Universe-AI
 
 ---
 
-## 2. Create a Virtual Environment
+## 2. Create a Python virtual environment
 
 ```bash
 python -m venv venv
@@ -218,21 +297,13 @@ python -m venv venv
 
 Activate it on Windows:
 
-```bash
+```powershell
 venv\Scripts\activate
 ```
 
 ---
 
-## 3. Install Backend Dependencies
-
-Move into the backend directory:
-
-```bash
-cd backend
-```
-
-Install the required packages:
+## 3. Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -240,124 +311,282 @@ pip install -r requirements.txt
 
 ---
 
-## 4. Configure Google Gemini
+## 4. Configure Gemini API Key
 
-Create a `.env` file inside the `backend` directory and add your Gemini API key:
+Create/configure your environment variable:
 
-```env
+```text
 GEMINI_API_KEY=your_api_key_here
 ```
 
-**Never upload your API key to GitHub.**
+**Never commit your real API key to GitHub.**
 
 ---
 
-## 5. Start the Backend
-
-From the project root:
+## 5. Start the backend
 
 ```bash
 uvicorn backend.main:app --reload
 ```
 
-The application will be available at:
+The backend will normally be available at:
 
 ```text
 http://127.0.0.1:8000
 ```
 
-You can also use the included Windows startup file:
-
-```text
-Start_Universe_AI.bat
-```
-
----
-
-# 🌐 Live Demo
-
-Try the deployed version of UNIVERSE AI:
-
-**https://universe-ai-58di.onrender.com/**
-
 ---
 
 # 🔌 API Endpoints
 
-The FastAPI backend currently provides endpoints for:
+Universe AI provides API endpoints for managing the application.
 
-| Endpoint | Method | Purpose |
-|---|---|---|
-| `/api/health` | GET | Check backend and Gemini status |
-| `/api/chats` | POST | Create a conversation |
-| `/api/chats` | GET | Retrieve conversations |
-| `/api/chats/{session_id}` | GET | Retrieve a conversation |
-| `/api/chats/{session_id}` | DELETE | Delete a conversation |
-| `/api/chat` | POST | Send a message to the AI |
-| `/api/upload` | POST | Upload supported files |
+### Health Check
 
-The backend also serves the frontend application.
+```http
+GET /api/health
+```
+
+Checks backend and AI service status.
 
 ---
 
-# 🔑 Environment Variables
+### Get Chats
 
-The application uses environment variables for sensitive configuration.
-
-```env
-GEMINI_API_KEY=your_api_key_here
+```http
+GET /api/chats
 ```
 
-The `.env` file should remain local and must not be committed to GitHub.
+Returns available conversations.
+
+---
+
+### Create / Continue Chat
+
+```http
+POST /api/chat
+```
+
+Sends a user message and receives an AI response.
+
+---
+
+### Get Chat Messages
+
+```http
+GET /api/chats/{chat_id}/messages
+```
+
+Returns messages belonging to a specific conversation.
+
+---
+
+### Delete Chat
+
+```http
+DELETE /api/chats/{chat_id}
+```
+
+Deletes a conversation.
+
+---
+
+### Upload Document
+
+```http
+POST /api/upload
+```
+
+Uploads supported PDF or TXT documents for AI interaction.
+
+---
+
+# 🗄️ Database
+
+Universe AI uses **SQLite** for storing conversations.
+
+The database contains two primary logical entities:
+
+```text
+Chats
+ ├── id
+ ├── title
+ ├── created_at
+ └── updated_at
+
+Messages
+ ├── id
+ ├── chat_id
+ ├── role
+ ├── content
+ └── created_at
+```
+
+This structure allows multiple conversations to maintain independent message histories.
+
+---
+
+# 🔐 Security
+
+Universe AI follows basic security practices for API-based applications.
+
+### Important
+
+Do not upload or commit:
+
+```text
+.env
+API keys
+Passwords
+Private credentials
+Database secrets
+```
+
+Use environment variables instead:
+
+```text
+GEMINI_API_KEY
+```
+
+The `.gitignore` file should prevent sensitive local files from being committed.
 
 ---
 
 # ☁️ Deployment
 
-UNIVERSE AI is deployed as a web service using **Render**.
+Universe AI is deployed using **Render**.
 
-The application is connected to the GitHub repository, allowing updates pushed to the repository to be deployed through the configured Render service.
-
-### Production URL
+### Deployment architecture
 
 ```text
-https://universe-ai-58di.onrender.com/
+GitHub Repository
+       │
+       ▼
+     Render
+       │
+       ▼
+ FastAPI Backend
+       │
+       ▼
+   Gemini API
+```
+
+Live application:
+
+**https://universe-ai-58di.onrender.com/**
+
+---
+
+# 📱 Android Build
+
+The project includes an Android wrapper/application structure.
+
+For development, the Android project can be built using Gradle.
+
+Example:
+
+```powershell
+cd frontend/android
+```
+
+Then:
+
+```powershell
+cmd /c gradlew.bat assembleDebug
+```
+
+The generated debug APK is normally placed under:
+
+```text
+frontend/android/app/build/outputs/apk/debug/
+```
+
+The final APK can then be uploaded to a GitHub Release for users to download.
+
+---
+
+# 🔄 Updating the Android App
+
+Whenever the web application frontend is updated:
+
+```text
+Frontend Changes
+       │
+       ▼
+Sync Web Files
+       │
+       ▼
+Android www Folder
+       │
+       ▼
+Build APK
+       │
+       ▼
+GitHub Release
+```
+
+This keeps the Android application synchronized with the latest Universe AI interface.
+
+---
+
+# 🎨 User Interface
+
+Universe AI follows a modern AI-assistant design approach with:
+
+- 🌌 Futuristic interface
+- 🌓 Dark visual design
+- ✨ Modern chat experience
+- 💬 Message bubbles
+- 📱 Responsive layout
+- 🗂️ Conversation sidebar
+- 📄 Document upload
+- ⚡ Interactive controls
+- 🎯 Mobile-friendly interface
+
+---
+
+# 📸 Screenshots
+
+Add screenshots of the application here:
+
+```text
+docs/
+├── home.png
+├── chat.png
+├── new-chat.png
+├── document-upload.png
+└── android.png
+```
+
+Example:
+
+```markdown
+![Universe AI Home](docs/home.png)
+
+![Universe AI Chat](docs/chat.png)
+
+![Universe AI Android](docs/android.png)
 ```
 
 ---
 
-# 🔎 SEO
+# 🧪 Current Capabilities
 
-The deployed application includes basic search-engine configuration:
-
-- SEO title
-- Meta description
-- Canonical URL
-- Robots meta tag
-- `robots.txt`
-- `sitemap.xml`
-- Google Search Console verification
-- JSON-LD structured data
-- WebApplication structured data
-
-These configurations help search engines crawl and understand the public homepage.
-
----
-
-# 🎯 Project Objectives
-
-UNIVERSE AI was created as a practical full-stack AI project to explore:
-
-- Generative AI integration
-- Google Gemini API integration
-- FastAPI backend development
-- Frontend development with vanilla JavaScript
-- REST API communication
-- File processing
-- Conversation storage
-- Git and GitHub
-- Cloud deployment
-- Search-engine discoverability
+| Feature | Status |
+|---|---|
+| AI Chat | ✅ |
+| Gemini Integration | ✅ |
+| Multiple Conversations | ✅ |
+| Chat History | ✅ |
+| New Chat | ✅ |
+| Delete Chat | ✅ |
+| PDF Upload | ✅ |
+| TXT Upload | ✅ |
+| FastAPI Backend | ✅ |
+| SQLite Storage | ✅ |
+| Web Application | ✅ |
+| Android APK | ✅ |
+| Cloud Deployment | ✅ |
 
 ---
 
@@ -365,14 +594,70 @@ UNIVERSE AI was created as a practical full-stack AI project to explore:
 
 Planned improvements may include:
 
-- 🧠 Improved long-term conversation memory
-- 🔐 User authentication
-- ☁️ Cloud-based conversation storage
+- 🎙️ Voice input
+- 🔊 Text-to-speech
 - 🖼️ Image understanding
-- 📄 More advanced document processing
-- 🌍 Multi-language support
-- 📱 Progressive Web App support
-- 📊 Usage and analytics features
+- 📎 More document formats
+- 🔐 User authentication
+- ☁️ Cloud database
+- 👤 User profiles
+- 🌍 Multilingual conversations
+- 📊 AI usage analytics
+- 🎨 More personalization options
+- 🔔 Notifications
+- 📱 Improved Android experience
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+If you want to improve Universe AI:
+
+1. Fork the repository.
+2. Create a new branch.
+
+```bash
+git checkout -b feature/new-feature
+```
+
+3. Make your changes.
+4. Commit your changes.
+
+```bash
+git add .
+git commit -m "Add new feature"
+```
+
+5. Push the branch.
+
+```bash
+git push origin feature/new-feature
+```
+
+6. Open a Pull Request.
+
+---
+
+# 🐛 Bug Reports
+
+If you find a bug, please open an issue on GitHub and provide:
+
+- Description of the problem
+- Steps to reproduce
+- Expected behavior
+- Actual behavior
+- Browser/device information
+- Screenshots if possible
+
+---
+
+# 📜 License
+
+This project is currently maintained as a personal/educational AI project.
+
+If a formal open-source license is added in the future, this section will be updated accordingly.
 
 ---
 
@@ -380,43 +665,52 @@ Planned improvements may include:
 
 ## Shikhar Tiwari
 
-**BCA-MCA Data Science Student**
+**BCA-MCA Data Science Student**  
+**University of Allahabad**
 
-Interested in:
+### Connect with me
 
-- Artificial Intelligence
-- Machine Learning
-- Data Science
-- Python
-- FastAPI
-- Generative AI
-- Web Development
+- 🐙 GitHub:  
+  https://github.com/shikhartiwari1508
 
-### 🔗 Profiles
+- 💼 LinkedIn:  
+  https://linkedin.com/in/shikhar-tiwari-222007372
 
-**GitHub**  
-https://github.com/shikhartiwari1508
-
-**LinkedIn**  
-https://linkedin.com/in/shikhar-tiwari-222007372
-
-**Portfolio**  
-https://shikhartiwari1508.github.io/Shikhar_Tiwari-Portfolio/
+- 🌐 Portfolio:  
+  https://shikhartiwari1508.github.io/Shikhar_Tiwari-Portfolio/
 
 ---
 
-## ⭐ Support
+# ⭐ Support the Project
 
-If you find **UNIVERSE AI** interesting, consider giving the repository a ⭐ on GitHub.
+If you find **Universe AI** useful:
+
+⭐ Star the repository  
+🍴 Fork the project  
+🐛 Report bugs  
+💡 Suggest features  
+📢 Share the project
+
+Every star and contribution helps the project grow.
+
+---
+
+# 🌌 Universe AI
+
+<p align="center">
+
+<strong>Think Beyond Limits. Explore the Universe of AI.</strong>
+
+</p>
+
+<p align="center">
+
+🤖 AI • 💬 Conversations • 📄 Documents • 📱 Android • 🌐 Web
+
+</p>
 
 ---
 
 <p align="center">
-
-### 🌌 UNIVERSE AI
-
-**Explore • Learn • Create**
-
-Built with Python, FastAPI & Google Gemini.
-
+Made with ❤️ by <strong>Shikhar Tiwari</strong>
 </p>
