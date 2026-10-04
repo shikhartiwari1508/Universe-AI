@@ -1229,25 +1229,7 @@ async function speakText(text) {
     }
 }
 
-    window.speechSynthesis.cancel();
-
-    const clean = text
-        .replace(/```[\s\S]*?```/g, "")
-        .replace(/[*#`]/g, "");
-
-    const speech = new SpeechSynthesisUtterance(clean);
-
-    speech.rate = 1;
-
-    speech.pitch = 1;
-
-    speech.volume = 1;
-
-    window.speechSynthesis.speak(speech);
-
-    showToast("UNIVERSE is speaking 🔊");
-
-}
+   
 /* =========================================================
    VOICE INPUT
 ========================================================= */
