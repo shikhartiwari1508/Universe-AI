@@ -6,82 +6,54 @@
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     >
+
     <!-- ================= SEO ================= -->
 
-<title>UNIVERSE AI — Intelligent AI Assistant</title>
+    <title>UNIVERSE AI — Intelligent AI Assistant</title>
 
-<meta
-    name="description"
-    content="UNIVERSE AI is an intelligent AI assistant for learning, coding, answering questions, generating ideas and exploring knowledge with Google Gemini."
->
+    <meta
+        name="description"
+        content="UNIVERSE AI is an intelligent AI assistant for learning, coding, answering questions, generating ideas and exploring knowledge with Google Gemini."
+    >
 
-<meta
-    name="keywords"
-    content="Universe AI, AI assistant, AI chatbot, artificial intelligence, Gemini AI, coding assistant, Python AI assistant, online AI chatbot"
->
+    <meta
+        name="keywords"
+        content="Universe AI, AI assistant, AI chatbot, artificial intelligence, Gemini AI, coding assistant, Python AI assistant, online AI chatbot"
+    >
 
-<meta name="author" content="Shikhar Tiwari">
+    <meta name="author" content="Shikhar Tiwari">
 
-<meta
-    name="robots"
-    content="index, follow"
->
+    <meta name="robots" content="index, follow">
 
-<link
-    rel="canonical"
-    href="https://universe-ai-58di.onrender.com/"
->
+    <link rel="canonical" href="https://universe-ai-58di.onrender.com/">
 
-<!-- Open Graph -->
-<meta
-    property="og:title"
-    content="UNIVERSE AI — Intelligent AI Assistant"
->
+    <!-- Open Graph -->
+    <meta property="og:title" content="UNIVERSE AI — Intelligent AI Assistant">
 
-<meta
-    property="og:description"
-    content="UNIVERSE AI is an intelligent AI assistant for learning, coding, answering questions and exploring knowledge with Google Gemini."
->
+    <meta
+        property="og:description"
+        content="UNIVERSE AI is an intelligent AI assistant for learning, coding, answering questions and exploring knowledge with Google Gemini."
+    >
 
-<meta
-    property="og:type"
-    content="website"
->
+    <meta property="og:type" content="website">
 
-<meta
-    property="og:url"
-    content="https://universe-ai-58di.onrender.com/"
->
+    <meta property="og:url" content="https://universe-ai-58di.onrender.com/">
 
     <!-- ================= FAVICON ================= -->
 
-    <link
-        rel="icon"
-        type="image/svg+xml"
-        href="/static/favicon.svg"
-    >
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
     <!-- ================= STYLES ================= -->
 
-    <link
-        rel="stylesheet"
-        href="/static/style.css"
-    >
+    <link rel="stylesheet" href="style.css">
 
     <!-- ================= GOOGLE FONTS ================= -->
 
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
@@ -96,12 +68,14 @@
 <div class="app">
 
 
+    <!-- ================= SIDEBAR OVERLAY (mobile) ================= -->
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
     <!-- ================= SIDEBAR ================= -->
 
-    <aside
-        class="sidebar"
-        id="sidebar"
-    >
+    <aside class="sidebar" id="sidebar">
 
         <div class="brand">
 
@@ -109,29 +83,32 @@
                 <span>✦</span>
             </div>
 
-            <div>
+            <div class="brand-text">
 
                 <h1>UNIVERSE</h1>
 
-                <small>
-                    AI ASSISTANT
-                </small>
+                <small>AI ASSISTANT</small>
 
             </div>
+
+            <!-- CLOSE (X) BUTTON — visible on mobile / APK -->
+            <button
+                class="sidebar-close"
+                id="sidebarClose"
+                title="Close menu"
+                aria-label="Close menu"
+            >
+                ✕
+            </button>
 
         </div>
 
 
-        <button
-            class="new-chat-btn"
-            id="newChatBtn"
-        >
+        <button class="new-chat-btn" id="newChatBtn">
 
             <span>＋</span>
 
-            <span>
-                New Chat
-            </span>
+            <span>New Chat</span>
 
         </button>
 
@@ -140,24 +117,16 @@
 
             <div class="section-title">
 
-                <span>
-                    CONVERSATIONS
-                </span>
+                <span>CONVERSATIONS</span>
 
-                <button
-                    id="clearChatsBtn"
-                    title="Clear chats"
-                >
+                <button id="clearChatsBtn" title="Delete all chats">
                     ⌫
                 </button>
 
             </div>
 
 
-            <div
-                id="chatHistory"
-                class="chat-history"
-            ></div>
+            <div id="chatHistory" class="chat-history"></div>
 
         </div>
 
@@ -170,13 +139,9 @@
 
                 <div>
 
-                    <strong>
-                        AI System
-                    </strong>
+                    <strong>AI System</strong>
 
-                    <small>
-                        Gemini Connected
-                    </small>
+                    <small>Gemini Connected</small>
 
                 </div>
 
@@ -185,28 +150,11 @@
 
             <div class="sidebar-actions">
 
-                <button
-                    id="themeBtn"
-                    title="Change theme"
-                >
-                    ◐
-                </button>
+                <button id="themeBtn" title="Change theme">◐</button>
 
+                <button id="exportBtn" title="Export conversation">⇩</button>
 
-                <button
-                    id="exportBtn"
-                    title="Export conversation"
-                >
-                    ⇩
-                </button>
-
-
-                <button
-                    id="settingsBtn"
-                    title="Settings"
-                >
-                    ⚙
-                </button>
+                <button id="settingsBtn" title="Settings">⚙</button>
 
             </div>
 
@@ -228,6 +176,7 @@
             <button
                 class="mobile-menu"
                 id="mobileMenu"
+                aria-label="Open menu"
             >
                 ☰
             </button>
@@ -236,26 +185,16 @@
             <div class="topbar-title">
 
                 <div class="online-icon">
-
                     <span></span>
-
                 </div>
-
 
                 <div>
 
-                    <h2>
-                        UNIVERSE AI
-                    </h2>
+                    <h2>UNIVERSE AI</h2>
 
                     <p>
-
-                        <span class="online-text">
-                            Online
-                        </span>
-
+                        <span class="online-text">Online</span>
                         • Google Gemini
-
                     </p>
 
                 </div>
@@ -266,19 +205,16 @@
             <div class="topbar-actions">
 
                 <button
-                    id="searchBtn"
-                    title="Search conversation"
+                    id="newChatTop"
+                    class="top-new-chat"
+                    title="New chat"
                 >
-                    ⌕
+                    ＋
                 </button>
 
+                <button id="searchBtn" title="Search conversation">⌕</button>
 
-                <button
-                    id="fullscreenBtn"
-                    title="Fullscreen"
-                >
-                    ⛶
-                </button>
+                <button id="fullscreenBtn" title="Fullscreen">⛶</button>
 
             </div>
 
@@ -288,17 +224,11 @@
 
         <!-- ================= SEARCH ================= -->
 
-        <div
-            class="search-panel"
-            id="searchPanel"
-        >
+        <div class="search-panel" id="searchPanel">
 
             <div class="search-box">
 
-                <span>
-                    ⌕
-                </span>
-
+                <span>⌕</span>
 
                 <input
                     type="text"
@@ -306,10 +236,7 @@
                     placeholder="Search this conversation..."
                 >
 
-
-                <button id="closeSearch">
-                    ×
-                </button>
+                <button id="closeSearch" aria-label="Close search">×</button>
 
             </div>
 
@@ -319,138 +246,70 @@
 
         <!-- ================= CHAT ================= -->
 
-        <section
-            class="chat-area"
-            id="chatArea"
-        >
+        <section class="chat-area" id="chatArea">
 
 
             <!-- ================= WELCOME ================= -->
 
-            <div
-                class="welcome"
-                id="welcome"
-            >
+            <div class="welcome" id="welcome">
 
                 <div class="hero-orb">
-
-                    <div class="orb-inner">
-                        ✦
-                    </div>
-
+                    <div class="orb-inner">✦</div>
                 </div>
 
 
                 <h2>
-
                     Your AI Assistant —
-                    <span>
-                        UNIVERSE AI
-                    </span>
-
+                    <span>UNIVERSE AI</span>
                 </h2>
 
 
                 <p>
-
-                    <p>
-
-    UNIVERSE AI is an intelligent AI assistant
-    powered by Google Gemini. Ask questions,
-    learn concepts, write and understand code,
-    generate ideas, and explore knowledge
-    through an interactive AI experience.
-
+                    UNIVERSE AI is an intelligent AI assistant
+                    powered by Google Gemini. Ask questions,
+                    learn concepts, write and understand code,
+                    generate ideas, and explore knowledge
+                    through an interactive AI experience.
                 </p>
-                </p>
-
 
 
                 <div class="quick-prompts">
-
 
                     <button
                         class="prompt-card"
                         data-prompt="Explain artificial intelligence in simple words"
                     >
-
-                        <span>
-                            🧠
-                        </span>
-
-                        <strong>
-                             Learn Artificial Intelligence
-                        </strong>
-
-                        <small>
-                            AI concepts in simple words
-                        </small>
-
+                        <span>🧠</span>
+                        <strong>Learn Artificial Intelligence</strong>
+                        <small>AI concepts in simple words</small>
                     </button>
-
-
 
                     <button
                         class="prompt-card"
                         data-prompt="Write a Python program to calculate factorial"
                     >
-
-                        <span>
-                            💻
-                        </span>
-
-                        <strong>
-                            AI Coding Assistant
-                        </strong>
-
-                        <small>
-                             Write and understand Python code
-                        </small>
-
+                        <span>💻</span>
+                        <strong>AI Coding Assistant</strong>
+                        <small>Write and understand Python code</small>
                     </button>
-
-
 
                     <button
                         class="prompt-card"
                         data-prompt="Give me 5 innovative project ideas for a computer science student"
                     >
-
-                        <span>
-                            🚀
-                        </span>
-
-                        <strong>
-                             AI Project Ideas
-                        </strong>
-
-                        <small>
-                              Ideas for students and developers
-                        </small>
-
+                        <span>🚀</span>
+                        <strong>AI Project Ideas</strong>
+                        <small>Ideas for students and developers</small>
                     </button>
-
-
 
                     <button
                         class="prompt-card"
                         data-prompt="Teach me something interesting about space"
                     >
-
-                        <span>
-                            🌌
-                        </span>
-
-                        <strong>
-                            Explore Knowledge
-                        </strong>
-
-                        <small>
-                            Learn new topics with AI
-                        </small>
-
+                        <span>🌌</span>
+                        <strong>Explore Knowledge</strong>
+                        <small>Learn new topics with AI</small>
                     </button>
-
 
                 </div>
 
@@ -460,24 +319,15 @@
 
             <!-- ================= MESSAGES ================= -->
 
-            <div
-                class="messages"
-                id="messages"
-            ></div>
+            <div class="messages" id="messages"></div>
 
 
 
             <!-- ================= TYPING ================= -->
 
-            <div
-                class="typing-container hidden"
-                id="typing"
-            >
+            <div class="typing-container hidden" id="typing">
 
-                <div class="avatar small-avatar">
-                    ✦
-                </div>
-
+                <div class="avatar small-avatar">✦</div>
 
                 <div class="typing-bubble">
 
@@ -485,9 +335,7 @@
                     <span></span>
                     <span></span>
 
-                    <small>
-                        UNIVERSE is thinking...
-                    </small>
+                    <small>UNIVERSE is thinking...</small>
 
                 </div>
 
@@ -501,29 +349,40 @@
 
         <section class="composer-wrapper">
 
+            <!-- Attached document chip -->
+            <div class="attach-chip hidden" id="attachChip">
+
+                <span class="attach-icon">📎</span>
+
+                <span class="attach-name" id="attachName"></span>
+
+                <button
+                    id="removeAttach"
+                    title="Remove file"
+                    aria-label="Remove file"
+                >
+                    ✕
+                </button>
+
+            </div>
+
 
             <div class="composer">
 
-
                 <div class="attachment-area">
 
-                    <button
-                        id="attachBtn"
-                        title="Attach file"
-                    >
+                    <button id="attachBtn" title="Attach PDF or TXT file">
                         ＋
                     </button>
-
 
                     <input
                         type="file"
                         id="fileInput"
+                        accept=".pdf,.txt"
                         hidden
-                        multiple
                     >
 
                 </div>
-
 
 
                 <textarea
@@ -534,9 +393,7 @@
                 ></textarea>
 
 
-
                 <div class="composer-actions">
-
 
                     <button
                         id="voiceBtn"
@@ -546,7 +403,6 @@
                         🎙
                     </button>
 
-
                     <button
                         id="sendBtn"
                         class="send-btn"
@@ -555,28 +411,19 @@
                         ➤
                     </button>
 
-
                 </div>
 
             </div>
 
 
-
             <div class="composer-footer">
 
                 <span>
-
                     UNIVERSE may make mistakes.
                     Verify important information.
-
                 </span>
 
-
-                <span id="messageCounter">
-
-                    0 characters
-
-                </span>
+                <span id="messageCounter">0 characters</span>
 
             </div>
 
@@ -588,130 +435,69 @@
 
     <!-- ================= SETTINGS ================= -->
 
-    <div
-        class="modal hidden"
-        id="settingsModal"
-    >
+    <div class="modal hidden" id="settingsModal">
 
         <div class="modal-card">
-
 
             <div class="modal-header">
 
                 <div>
-
-                    <h2>
-                        Settings
-                    </h2>
-
-                    <p>
-                        Customize your UNIVERSE experience
-                    </p>
-
+                    <h2>Settings</h2>
+                    <p>Customize your UNIVERSE experience</p>
                 </div>
 
-
-                <button id="closeSettings">
-                    ×
-                </button>
+                <button id="closeSettings" aria-label="Close settings">×</button>
 
             </div>
-
 
 
             <div class="setting-item">
 
                 <div>
-
-                    <strong>
-                        Theme
-                    </strong>
-
-                    <small>
-                        Switch between light and dark interface
-                    </small>
-
+                    <strong>Theme</strong>
+                    <small>Switch between light and dark interface</small>
                 </div>
 
-
-                <button
-                    id="modalThemeBtn"
-                    class="setting-control"
-                >
+                <button id="modalThemeBtn" class="setting-control">
                     Dark
                 </button>
 
             </div>
 
 
-
             <div class="setting-item">
 
                 <div>
-
-                    <strong>
-                        Sound
-                    </strong>
-
-                    <small>
-                        Play a notification after response
-                    </small>
-
+                    <strong>Sound</strong>
+                    <small>Play a notification after response</small>
                 </div>
 
-
                 <label class="switch">
-
-                    <input
-                        type="checkbox"
-                        id="soundToggle"
-                    >
-
+                    <input type="checkbox" id="soundToggle">
                     <span></span>
-
                 </label>
 
             </div>
 
 
-
             <div class="setting-item">
 
                 <div>
-
-                    <strong>
-                        Enter to Send
-                    </strong>
-
-                    <small>
-                        Press Enter to send a message
-                    </small>
-
+                    <strong>Enter to Send</strong>
+                    <small>Press Enter to send a message</small>
                 </div>
 
-
                 <label class="switch">
-
-                    <input
-                        type="checkbox"
-                        id="enterToggle"
-                        checked
-                    >
-
+                    <input type="checkbox" id="enterToggle" checked>
                     <span></span>
-
                 </label>
 
             </div>
-
 
 
             <div class="modal-footer">
 
-                <button
-                    id="closeSettings2"
-                    class="secondary-btn"
-                >
+                <button id="closeSettings2" class="secondary-btn">
                     Close
                 </button>
 
@@ -725,18 +511,11 @@
 
     <!-- ================= TOAST ================= -->
 
-    <div
-        class="toast"
-        id="toast"
-    >
+    <div class="toast" id="toast">
 
-        <span>
-            ✓
-        </span>
+        <span>✓</span>
 
-        <p>
-            Copied to clipboard
-        </p>
+        <p>Copied to clipboard</p>
 
     </div>
 
@@ -747,7 +526,7 @@
 
 <!-- ================= JAVASCRIPT ================= -->
 
-<script src="/static/script.js"></script>
+<script src="script.js"></script>
 
 <!-- ================= STRUCTURED DATA ================= -->
 
