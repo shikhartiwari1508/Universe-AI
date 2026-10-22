@@ -712,5 +712,5 @@ Every star and contribution helps the project grow.
 ---
 
 <p align="center">
-Made with ❤️ by <strong>Shikhar Tiwari</strong>
+Made with ❤️ by <strong>Mr. Shikhar Tiwari</strong>
 </p>
