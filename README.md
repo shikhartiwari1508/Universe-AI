@@ -561,8 +561,7 @@ docs/
 Example:
 
 ```markdown
-![Universe AI Home](<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/514897d9-cd0c-4d15-abd2-1037bee391a5" />
-)
+![Universe AI Home](docs/home.png)
 
 ![Universe AI Chat](docs/chat.png)
 
